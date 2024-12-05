@@ -10,7 +10,7 @@ const { ExpressAdapter } = require('ask-sdk-express-adapter');
 const app = express();
 const port = 3037;
 
-app.use(express.statis(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 
 
