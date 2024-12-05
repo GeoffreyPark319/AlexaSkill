@@ -1,0 +1,96 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "action",
+              "type": "ActionType"
+            }
+          ],
+          "name": "GameIntent",
+          "samples": [
+            "choose {action}",
+            "i would like to choose {action}",
+            "my choice is {action}",
+            "i choose {action}",
+            "{action}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "ScoreIntent",
+          "samples": [
+            "score me",
+            "tell score",
+            "score",
+            "tell me my score",
+            "what is my score"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "InfoIntent",
+          "samples": [
+            "tell me about this app",
+            "tell information",
+            "tell info",
+            "information",
+            "info"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "YippeeIntent",
+          "samples": [
+            "what is your surprise"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "scissor"
+              }
+            },
+            {
+              "name": {
+                "value": "paper"
+              }
+            },
+            {
+              "name": {
+                "value": "rock"
+              }
+            }
+          ],
+          "name": "ActionType"
+        }
+      ],
+      "invocationName": "rock paper scissor"
+    }
+  }
+}
