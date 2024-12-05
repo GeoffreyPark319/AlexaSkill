@@ -5,6 +5,8 @@
  * */
 const Alexa = require('ask-sdk-core');
 const express = require('express');
+const { ExpressAdapter } = require('ask-sdk-express-adapter');
+
 const app = express();
 const port = 3037;
 
@@ -246,7 +248,7 @@ const ErrorHandler = {
  * payloads to the handlers above. Make sure any new handlers or interceptors you've
  * defined are included below. The order matters - they're processed top to bottom 
  * */
-exports.handler = Alexa.SkillBuilders.custom()
+const skill = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         GameIntentHandler,
@@ -261,6 +263,12 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addErrorHandlers(
         ErrorHandler)
     .withCustomUserAgent('sample/hello-world/v1.2')
-    .lambda();
+    .create();
+const adapter = new ExpressAdapter(skill, false, false);
+const app = express();
+
+
+app.post('/', adapter.getRequestHandlers());
+app.listen(3037);
 
 exports.app = app;
